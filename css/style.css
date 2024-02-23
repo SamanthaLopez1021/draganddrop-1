@@ -7,7 +7,7 @@ body{
     flex-wrap: wrap;                                    ;
 }
 .hexagono{
-    position: relative;
+    position:relative;
     display: block;
     background-color: #28b0faa1;
     width: calc(var(--hw) * 1px ); 
@@ -16,7 +16,6 @@ body{
     border: 1px solid #000;
     border-radius: 5%;
     transition: all .5s ease-out;
-    top:50px;  
     margin: 70px 20px; 
     text-align: center;
     z-index: 2;
@@ -48,6 +47,43 @@ transform: rotate(-60deg);
 background-color: inherit;
 border-radius: 5%;
 }
+.hexagono-base{
+    position:relative;
+    display: block;
+    background-color: #28b0faa1;
+    width: calc(var(--hw) * 1px ); 
+    height: var(--wh);
+    z-index: 999;
+    border: 1px solid #000;
+    border-radius: 5%;
+    transition: all .5s ease-out;
+    top:50px;  
+    margin: 70px 20px; 
+    text-align: center;
+    z-index: 2;
+}
+.hexagono-base::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    transform: rotate(60deg);
+    background-color: inherit;
+    border-radius: 5%;
+    }
+    .hexagono-base::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    width: inherit;
+    height: inherit;
+    transform: rotate(-60deg);
+    background-color: inherit;
+    border-radius: 5%;
+    }
 .container_flag{
     background: red;
 }
@@ -81,4 +117,8 @@ border-radius: 5%;
     width:100px ;
     height: 100px;
     position: relative;
+}
+#containerDrop_a{
+    display: grid;
+    place-items: center;
 }

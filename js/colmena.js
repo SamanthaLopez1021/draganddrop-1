@@ -35,32 +35,27 @@ window.addEventListener("load",(e)=> {
             
             let idBox=container.id.split("_")[1]
             idElementproces === idBox  ? container.appendChild(document.getElementById(idElement)) : alert("no puedes colocar esto aqui")
-            // container.appendChild(document.getElementById(idElement))
+            container.appendChild(document.getElementById(idElement))
             el= document.querySelector(".hexagono-base");
+            let childs = document.querySelectorAll("#containerDrop_a .hexagono");
             let coords = el.getBoundingClientRect();
             let topcords= coords.top
+            let rigthcord =coords.right
+            
+            
             console.log("elemento",coords)
             console.log("elemento",`${Math.floor(topcords + 50)}px`)
             console.log("elemento",document.getElementById(idElement))
+            console.log("child",childs)
+            let [num1,num2] =ubicacionPanal(childs.length) 
             document.getElementById(idElement).style.position = "absolute";
-            document.getElementById(idElement).style.top =`${Math.floor(topcords + 50)}px`
+            document.getElementById(idElement).style.top =`${Math.floor(topcords + parseInt(num2))}px`
+            document.getElementById(idElement).style.right =`${Math.floor(rigthcord - parseInt(num1))}px`
             
         });
-       
     })
 
-    const container_images = document.getElementById("container_images");
-    let imagesArray =['p1.png','p2.png','p3.png','p4.png','p5.png','p6.png','p7.png','p8.png','p9.png','p10.png','p11.png','p12.png']  
-    imagesArray.forEach((img,index) =>{
-        let imgen = document.createElement("img")
-        imgen.id= "imagenx_"+index
-        imgen.dataset.id="imageny_"+index;
-        imgen.setAttribute("class","image-pieza");
-        imgen.style.zIndex=(2+index)+" "
-        imgen.src='/img/rompecabezas/'+imagesArray[index]
-        imgen.draggable = true
-        container_images.appendChild(imgen)
-    })
+    
     const imageElements = document.querySelectorAll(".image-pieza");
     // const containerDrop= document.getElementById("container_drop")
     imageElements.forEach(img => {
@@ -74,14 +69,6 @@ window.addEventListener("load",(e)=> {
         img.addEventListener('drag',e => {
         });
     });
-    for (let index = 0; index < imagesArray.length; index++) {
-        let containerbox = document.getElementById("box_2");
-        let imgenbox = document.createElement("div")
-        imgenbox.id= "imageny_"+index
-        imgenbox.setAttribute("class","image-box container-drop");
-        containerbox.appendChild(imgenbox)
-        
-    }
     let containerDropTwo= document.querySelectorAll("#box_2 .container-drop");
         containerDropTwo.forEach(containerTwo => {
             containerTwo.addEventListener('dragover', e =>{
@@ -92,8 +79,6 @@ window.addEventListener("load",(e)=> {
                 let imagewhitoutprocess = e.dataTransfer.getData('id')
                 let idImage = e.dataTransfer.getData('id').split("_")[1];
                 let idContainerImageProcess = idContainerImage.split("_")[1]
-                
-
                 let prueba= document.getElementById(imagewhitoutprocess)
                 
                 console.log(prueba,"este es el idde la imagen",idImage);
@@ -107,5 +92,38 @@ window.addEventListener("load",(e)=> {
             })
             
         });
+        function ubicacionPanal(numHexagonos){
+            if(numHexagonos == 1){
+                let num1 = 154
+                let num2 = 174
+                return [num1,num2] 
+            }
+            if(numHexagonos == 2){
+                let num1 = 210
+                let num2 = 80
+                return [num1,num2] 
+            }
+            if(numHexagonos == 3){
+                let num1 = 152
+                let num2 = -14
+                return [num1,num2] 
+            }
+            if(numHexagonos == 4){
+                let num1 = 40
+                let num2 = -14
+                return [num1,num2] 
+            }
+            if(numHexagonos == 5){
+                let num1 = -14
+                let num2 = 80
+                return [num1,num2] 
+            }
+            if(numHexagonos == 6){
+                let num1 = 42
+                let num2 = 174
+                return [num1,num2] 
+            }
+            
+        }
 });
 
