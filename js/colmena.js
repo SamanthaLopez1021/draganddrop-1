@@ -1,4 +1,9 @@
 window.addEventListener("load",(e)=> {
+    let cordenadasiniciales = document.querySelector(".hexagono-base").getBoundingClientRect();
+    let cordenadasinicialesc = document.querySelector("#containerDrop_a").getBoundingClientRect();
+    console.log("cornedanada inicial",cordenadasiniciales);
+    console.log("cornedanada cuadro",cordenadasinicialesc);
+    console.log("cornedanada restante",cordenadasiniciales.right - cordenadasinicialesc.right);
     console.log("cargo el documento")
     const elements = document.querySelectorAll(".hexagono");
     // const containerDrop= document.getElementById("container_drop")
@@ -41,89 +46,53 @@ window.addEventListener("load",(e)=> {
             let coords = el.getBoundingClientRect();
             let topcords= coords.top
             let rigthcord =coords.right
+            let leftcord = coords.left
             
             
             console.log("elemento",coords)
-            console.log("elemento",`${Math.floor(topcords + 50)}px`)
-            console.log("elemento",document.getElementById(idElement))
-            console.log("child",childs)
+            console.log("rigthcord",rigthcord);
+            
+            
             let [num1,num2] =ubicacionPanal(childs.length) 
             document.getElementById(idElement).style.position = "absolute";
             document.getElementById(idElement).style.top =`${Math.floor(topcords + parseInt(num2))}px`
-            document.getElementById(idElement).style.right =`${Math.floor(rigthcord - parseInt(num1))}px`
-            
+            document.getElementById(idElement).style.left =`${Math.floor(rigthcord - parseInt(num1))}px`
+            document.getElementById(idElement).style.right =`${Math.floor(leftcord + parseInt(num1))}px`
+            console.log("finalcord",document.getElementById(idElement).style.right =`${Math.floor(rigthcord - parseInt(num1))}px`);
         });
     })
-
-    
-    const imageElements = document.querySelectorAll(".image-pieza");
-    // const containerDrop= document.getElementById("container_drop")
-    imageElements.forEach(img => {
-        img.addEventListener('dragstart',e => {
-            e.dataTransfer.setData('id',e.target.id)
-            console.log("id-image-data" ,e.target.id)
-        });
-        img.addEventListener('dragend',e => {
-            
-        });
-        img.addEventListener('drag',e => {
-        });
-    });
-    let containerDropTwo= document.querySelectorAll("#box_2 .container-drop");
-        containerDropTwo.forEach(containerTwo => {
-            containerTwo.addEventListener('dragover', e =>{
-                e.preventDefault();
-            });
-            containerTwo.addEventListener('drop',e=>{
-                let idContainerImage = e.target.id
-                let imagewhitoutprocess = e.dataTransfer.getData('id')
-                let idImage = e.dataTransfer.getData('id').split("_")[1];
-                let idContainerImageProcess = idContainerImage.split("_")[1]
-                let prueba= document.getElementById(imagewhitoutprocess)
-                
-                console.log(prueba,"este es el idde la imagen",idImage);
-                if(idContainerImageProcess === idImage ){
-                    containerTwo.appendChild(document.getElementById(imagewhitoutprocess))
-                    prueba.style.position="absolute"
-                    prueba.style.transform="scale(1.49)"
-                }else{
-                    alert("no puedes colocar esto aqui")     
-                }
-            })
-            
-        });
-        function ubicacionPanal(numHexagonos){
-            if(numHexagonos == 1){
-                let num1 = 154
-                let num2 = 174
-                return [num1,num2] 
-            }
-            if(numHexagonos == 2){
-                let num1 = 210
-                let num2 = 80
-                return [num1,num2] 
-            }
-            if(numHexagonos == 3){
-                let num1 = 152
-                let num2 = -14
-                return [num1,num2] 
-            }
-            if(numHexagonos == 4){
-                let num1 = 40
-                let num2 = -14
-                return [num1,num2] 
-            }
-            if(numHexagonos == 5){
-                let num1 = -14
-                let num2 = 80
-                return [num1,num2] 
-            }
-            if(numHexagonos == 6){
-                let num1 = 42
-                let num2 = 174
-                return [num1,num2] 
-            }
-            
+    function ubicacionPanal(numHexagonos){
+        if(numHexagonos == 1){
+            let num1 = 74
+            let num2 = 174
+            return [num1,num2] 
         }
+        if(numHexagonos == 2){
+            let num1 = 20
+            let num2 = 80
+            return [num1,num2] 
+        }
+        if(numHexagonos == 3){
+            let num1 = 74
+            let num2 = -14
+            return [num1,num2] 
+        }
+        if(numHexagonos == 4){
+            let num1 = 186
+            let num2 = -14
+            return [num1,num2] 
+        }
+        if(numHexagonos == 5){
+            let num1 = 244
+            let num2 = 80
+            return [num1,num2] 
+        }
+        if(numHexagonos == 6){
+            let num1 = 186
+            let num2 = 174
+            return [num1,num2] 
+        }
+        
+    }
 });
 
