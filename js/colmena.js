@@ -1,34 +1,30 @@
 window.addEventListener("load",(e)=> {
     let cordenadasiniciales = document.querySelector(".hexagono-base").getBoundingClientRect();
     let cordenadasinicialesc = document.querySelector("#containerDrop_a").getBoundingClientRect();
-    console.log("cornedanada inicial",cordenadasiniciales);
-    console.log("cornedanada cuadro",cordenadasinicialesc);
-    console.log("cornedanada restante",cordenadasiniciales.right - cordenadasinicialesc.right);
-    console.log("cargo el documento")
     const elements = document.querySelectorAll(".hexagono");
     // const containerDrop= document.getElementById("container_drop")
     const containerDrop= document.querySelectorAll(".container-drop")
     elements.forEach(element => {
         element.addEventListener('dragstart',e => {
-            console.log("dragstart")
+            // console.log("dragstart")
             e.dataTransfer.setData('id',e.target.id)
         });
         element.addEventListener('dragend',e => {
-            console.log('drag End');
+            // console.log('drag End');
         });
         element.addEventListener('drag',e => {
-            console.log('drag');
+            // console.log('drag');
         });
         
     });
     containerDrop.forEach(container=>{
         
         container.addEventListener('dragenter', e =>{
-            console.log("dragenter")
+            // console.log("dragenter")
                
         });
         container.addEventListener('dragleave', e =>{
-            console.log("dragleave")
+            // console.log("dragleave")
         });
         container.addEventListener('dragover', e =>{
             e.preventDefault();
@@ -39,26 +35,28 @@ window.addEventListener("load",(e)=> {
             let idElementproces = e.dataTransfer.getData('id').split("_")[1]
             
             let idBox=container.id.split("_")[1]
-            idElementproces === idBox  ? container.appendChild(document.getElementById(idElement)) : alert("no puedes colocar esto aqui")
-            container.appendChild(document.getElementById(idElement))
+            
+				//idElementproces === idBox  ? container.appendChild(document.getElementById(idElement)) : alert("no puedes colocar esto aqui")
+				container.appendChild(document.getElementById(idElement));
+				window.idForm.classList.remove("hidden");
             el= document.querySelector(".hexagono-base");
             let childs = document.querySelectorAll("#containerDrop_a .hexagono");
             let coords = el.getBoundingClientRect();
-            let topcords= coords.top
+            let topcords= coords.top+window.scrollY 
             let rigthcord =coords.right
-            let leftcord = coords.left
+            let leftcord = coords.left+window.scrollX
+				window.campoServicios.innerHTML = "";
+            childs.forEach(child=>{	
+					let service = document.createElement("span");
+					service.textContent = child.textContent.trim();
+					window.campoServicios.appendChild(service);
+				})
             
-            
-            console.log("elemento",coords)
-            console.log("rigthcord",rigthcord);
-            
-            
-            let [num1,num2] =ubicacionPanal(childs.length) 
+            let [num1,num2] =ubicacionPanal(childs.length);
             document.getElementById(idElement).style.position = "absolute";
             document.getElementById(idElement).style.top =`${Math.floor(topcords + parseInt(num2))}px`
             document.getElementById(idElement).style.left =`${Math.floor(rigthcord - parseInt(num1))}px`
             document.getElementById(idElement).style.right =`${Math.floor(leftcord + parseInt(num1))}px`
-            console.log("finalcord",document.getElementById(idElement).style.right =`${Math.floor(rigthcord - parseInt(num1))}px`);
         });
     })
     function ubicacionPanal(numHexagonos){

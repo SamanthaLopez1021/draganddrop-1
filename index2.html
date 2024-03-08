@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link rel="icon" type="image/x-icon" href="/img/completo-8.png" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Nunito+Sans:opsz@6..12&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -13,62 +17,68 @@
     <div class="container">
     <div class="container-drag">
         <div id="hexaone_a" class="hexagono" draggable="true">
-            <span>servicio 1</span>
+            <span>Planeación y evaluación de campañas digitales</span>
         </div>
         <div  id="hexaTwo_a" class="hexagono" draggable="true">
-            <span>servicio 2</span>
+            <span>Diseño de contenido grafico</span>
         </div>
         <div id="hexatree_a" class="hexagono" draggable="true">
-            <span>servicio 3</span>
+            <span>Renovación del concepto de tu marca</span>
         </div>
         <div id="hexafour_a" class="hexagono" draggable="true">
-            <span>servicio 4</span>
+            <span>Externalización de procesos de negocio</span>
         </div>
         <div  id="hexafive_a" class="hexagono" draggable="true">
-            <span>servicio 5</span>
+            <span>Inteligencia de negocios</span>
         </div>
         <div id="hexasix_a" class="hexagono" draggable="true">
-            <span>servicio 6</span>
+            <span>Reingenieria Web</span>
         </div>
     </div>
     <div id="containerDrop_a" class="container-drop" draggable="true">
         <div id="" class="hexagono-base" draggable="true">
-            <span>paquete Servicios</span>
+            <span>Así quedaria tu paquete de servicios</span>
         </div>
     </div>
 </div>
     <div class="btn-container">
-        <button id="idForm" modalForm="idModalForm" class="btn-services">Elige tus servicios</button>
+        <button id="idForm" modalForm="idModalForm" class="btn-services hidden">Estos me interesan!</button>
     </div>
         <!-- modal -->
         <div id="idModalForm" class="centerModal hidden" >
             <div class="panelModal">
                 <div class="interiorModal">
-                    <button class="closebuttonModal" modalClose="idModalForm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" fill="white"/></svg></button>
-                    <div class="contentModal">
-                        <h3 class="tituloModal">¡Contactanos!</h3>
-                        <form action="post">
-                            <div class="campos">
-                                <input type="text"  name="nombre" placeholder="Nombre">
+                        <div class="services">
+                            <h2 class="titleModal">¡Genial!</h2>
+                            <h4 class="textModal">Nos estaremos comunicando para hablar de:</h3>
+                            <div id="campoServicios" class="campos campoServicios">
                             </div>
-                            <div class="campos">
-                                <input type="text"  name="empresa" placeholder="Empresa">
-                            </div>
-                            <div class="campos">
-                                <input type="text"  name="tel" placeholder="Telefono">
-                            </div>
-                            <div class="campos">
-                                <input type="email" name="email" placeholder="Email">
-                            </div>
-                            <div class="campos">
-                                <input type="text" name="servicios" placeholder="Servicios">
-                            </div>
-                            <div class="campos">
-                                <textarea name="msg" placeholder="Un mensaje"></textarea>
-                            </div>
-                            <button class="btn-ok-modal" modalClose="idModalUno">Enviar</button>
-                        </form>
-                    </div>
+                        </div>
+                        <div class="contentModal">
+                            <form action="post">
+                                <div class="campos">
+                                    <input type="text"  name="nombre" placeholder="Nombre">
+                                </div>
+                                <div class="campos">
+                                    <input type="text"  name="empresa" placeholder="Empresa">
+                                </div>
+                                <div class="campos">
+                                    <input type="text"  name="tel" placeholder="Telefono">
+                                </div>
+                                <div class="campos">
+                                    <input type="email" name="email" placeholder="Email">
+                                </div>
+                                
+                                <div class="campos">
+                                    <textarea name="msg" placeholder="Un mensaje" height="80px"></textarea>
+                                </div>
+                                <div class="campo-checkbox">
+                                    <input type="checkbox" id="checkbox" class="checkbox">
+                                    <label class="politicas" for="checkbox">Yo autorizo a Red Design Systems SAS. <a href="#">Leer más</a></label>
+                                </div>
+                                <button class="btn-ok-modal" modalClose="idModalUno">Enviar</button>
+                            </form>
+                        </div>
                 </div>
             </div>
         </div>
