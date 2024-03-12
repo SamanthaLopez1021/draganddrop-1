@@ -1,5 +1,5 @@
 :root{
-    --hw : 110;
+    --hw : 160;
     --wh :calc(((50 * var(--hw))/86)* 1px);
     --rojo: #DB3753;
     --gris: #42444B;
@@ -12,23 +12,24 @@ body{
 }
 .title {
     width: 100%;
-    text-align: center;
-    color: var(--rojo);
+    color: var(--gris);
+    margin-left: 15%;
 }
 .title h1{
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
+    
 }
 .container{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     width: 100%;
 }
 .hexagono{
     position:relative;
     display: grid;
-    background-color: var(--aqua);
+    background-color: var(--gris);
     width: calc(var(--hw) * 1px ); 
     height: var(--wh);
     z-index: 999;
@@ -38,15 +39,30 @@ body{
     margin: 70px 20px; 
     text-align: center;
     z-index: 1;
-    color: white;
+    color: transparent;
     place-items: center;
 
 }
-/* .hexagono:hover{
-    transform: scale(1.2);
-    transition: all .5s ease-out;
-} */
+.hexagono img {
+    position: absolute;
+    top: 50%; /* Alinea el centro del elemento con el 50% del contenedor principal */
+    left: 50%; /* Alinea el centro del elemento con el 50% del contenedor principal */
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 118px;
+}
+.hexagono:hover {
+    background-color: var(--aqua);
+    color: white;
+    
+}
+.hexagono:hover img{
+    display: none;
+}
 
+.hexagono-base::after,.hexagono-base::before :hover{
+    background-color: var(--aqua);
+}
 .hexagono::after{
 content: '';
 display: block;
@@ -69,6 +85,7 @@ transform: rotate(-60deg);
 background-color: inherit;
 border-radius: 5%;
 }
+
 .hexagono-base{
     position:relative;
     display: grid;
@@ -76,7 +93,6 @@ border-radius: 5%;
     width: calc(var(--hw) * 1px ); 
     height: var(--wh);
     z-index: 999;
-    /* border: 1px solid #000; */
     border-radius: 5%;
     transition: all .5s ease-out;
     margin: 70px 20px; 
@@ -84,12 +100,14 @@ border-radius: 5%;
     z-index: 2;
     color: white;
     place-items: center;
+
 }
 .hexagono span,.hexagono-base span {
     position: relative; 
     z-index: 2; 
     font-weight: 800;
-    font-size: 0.7rem;
+    font-size: 1.25rem;
+    padding: 1px;
 }
 
 .hexagono-base::after{
@@ -102,6 +120,8 @@ border-radius: 5%;
     transform: rotate(60deg);
     background-color: inherit;
     border-radius: 5%;
+    
+
 }
 
 .hexagono-base::before{
@@ -115,48 +135,28 @@ border-radius: 5%;
     background-color: inherit;
     border-radius: 5%;
 }
-.container_flag{
-    background: red;
+
+.container{
+    flex-wrap: wrap;
+
 }
+
 .container-drag{
-    background-color:var(--gris);
     width: 600px;
     height: 600px;
-    border-radius: 15px;
-    margin: 10px;
     display:flex;
     flex-wrap: wrap;
     align-items: center;
 }
+
 .container-drop{
     background-color: var(--gris);
     width: 600px;
     height: 600px;
-    border-radius: 50px;
-    margin: 10px;
-    /* margin: 10px auto; */
+    border-radius: 50px ;
 }
-.container-drop_B{
-    background-color: rgba(255, 127, 144, 0.611);
-    width: 600px;
-    height: 600px;
-}
-.image-pieza{
-    width: 100px;
-    object-position: 0px;
-    object-fit: cover;
-}
-#box_2{
-    width: 500px;
-    display: flex;
-    flex-wrap: wrap;
-}
-.image-box{
-    border: 1px solid black ;
-    width:100px ;
-    height: 100px;
-    position: relative;
-}
+
+
 #containerDrop_a{
     display: grid;
     place-items: center;
@@ -165,8 +165,14 @@ border-radius: 5%;
 .btn-container {
     width: 100%;
     display: flex;
-    justify-content: center;
-    margin-top: 40px;
+    justify-content:center;
+    /* margin-top: 40px; */
+    background-color: var(--gris);
+    width: 600px;
+    margin-left: 600px;
+    border-radius: 0px 0px 50px 50px;
+    padding-bottom: 20px;
+    opacity: 1;
 }
 .btn-services {
     padding: 15px 20px;
@@ -244,7 +250,7 @@ border-radius: 5%;
     justify-content: center;
 }
 .services{
-    background-image: url(/img/contacto.jpg);
+    background-image: url(/img/imagenFormularioHoneycomb.png);
     background-size: cover;
     border-radius: 42px;
     width: 496px;
@@ -326,7 +332,7 @@ border-radius: 5%;
 .campos span{
 	color: white;
 	font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 	background-color: var(--aqua);
 	border: 1px solid transparent;
 	border-radius: 8px;

@@ -3,51 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <link rel="icon" type="image/x-icon" href="/img/completo-8.png" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Nunito+Sans:opsz@6..12&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
-    <style>
-       
-    </style>
 </head>
 <body>
-    <div class="container-drag">
-        <div id="hexaone_a" class="hexagono" draggable="true">
-            <span>A</span>
-        </div>
-        <div  id="hexaTwo_a" class="hexagono" draggable="true">
-            <span>b</span>
-        </div>
-        <div id="hexatree_a" class="hexagono" draggable="true">
-            <span>c</span>
-        </div>
-        <div id="hexaone_a" class="hexagono" draggable="true">
-            <span>d</span>
-        </div>
-        <div  id="hexaTwo_a" class="hexagono" draggable="true">
-            <span>e</span>
-        </div>
-        <div id="hexatree_a" class="hexagono" draggable="true">
-            <span>f</span>
-        </div>
-    </div>
-    <div id="containerDrop_a" class="container-drop" draggable="true">
-        <div id="" class="hexagono-base" draggable="true">
-            <span>paquete Servicios</span>
-        </div>
-    </div>
-    <div id="containerDrop_b" class="container-drop" draggable="true">
-        
-    </div>
-    <div class="container-rompecabezas">
-        <div id="container_images" class="container-items">
 
+    <div class="container">
+        <div class="title">
+            <h1>Arrastra los servicios que te <br> interesa cotizar</h1>
         </div>
-        <div id="box_2" class="">
 
+        <div class="container-drag">
+            
+            <div id="hexaone_a" class="hexagono" draggable="true">
+                <span>Planeación y evaluación de campañas digitales</span>
+                <img class="sevices" src="/img/planeacionEvaluacionCampanasDigitales.svg" alt="">
+            </div>
+            <div  id="hexaTwo_a" class="hexagono" draggable="true">
+                <span>Diseño de contenido grafico</span>
+                <img class="sevices" src="/img/disenoContenidoGrafico.svg">
+            </div>
+            <div id="hexatree_a" class="hexagono" draggable="true">
+                <span>Renovación del concepto de tu marca</span>
+                <img class="sevices" src="/img/renovacionConceptoDeMarca.svg">
+            </div>
+            <div id="hexafour_a" class="hexagono" draggable="true">
+                <span>Externalización de procesos de negocio</span>
+                <img class="sevices" src="/img/externalizacionProcesosDeNegocios.svg">
+            </div>
+            <div  id="hexafive_a" class="hexagono" draggable="true">
+                <span>Inteligencia de negocios</span>
+                <img class="sevices" src="/img/inteligenciaDeNegocios.svg">
+            </div>
+            <div id="hexasix_a" class="hexagono" draggable="true">
+                <span>Reingenieria Web</span>
+                <img class="sevices" src="/img/reingenieriaWeb.svg">
+            </div>
+        </div>
+        <div id="containerDrop_a" class="container-drop" draggable="true">
+            <div id="" class="hexagono-base" draggable="true">
+                <span>Así quedaria tu paquete de servicios</span>
+            </div>
+        </div>
+        <div  id="containerForm" class="btn-container hidden">
+            <button id="idForm" modalForm="idModalForm" class="btn-services hidden">Estos me interesan!</button>
         </div>
     </div>
+</div>
 
     
-    <script src="./js/index.js"></script>
+        <!-- modal -->
+        <div id="idModalForm" class="centerModal hidden" >
+            <div class="panelModal">
+                <div class="interiorModal">
+                        <div class="services">
+                            <h2 class="titleModal">¡Genial!</h2>
+                            <h4 class="textModal">Nos estaremos comunicando para hablar de:</h3>
+                            <div id="campoServicios" class="campos campoServicios">
+                            </div>
+                        </div>
+                        <div class="contentModal">
+                            <form action="post">
+                                <div class="campos">
+                                    <input type="text"  name="nombre" placeholder="Nombre">
+                                </div>
+                                <div class="campos">
+                                    <input type="text"  name="empresa" placeholder="Empresa">
+                                </div>
+                                <div class="campos">
+                                    <input type="text"  name="tel" placeholder="Telefono">
+                                </div>
+                                <div class="campos">
+                                    <input type="email" name="email" placeholder="Email">
+                                </div>
+                                
+                                <div class="campos">
+                                    <textarea name="msg" placeholder="Un mensaje" height="80px"></textarea>
+                                </div>
+                                <div class="campo-checkbox">
+                                    <input type="checkbox" id="checkbox" class="checkbox">
+                                    <label class="politicas" for="checkbox">Yo autorizo a Red Design Systems SAS. <a href="#">Leer más</a></label>
+                                </div>
+                                <button class="btn-ok-modal" modalClose="idModalUno">Enviar</button>
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    <script src="./js/colmena.js"></script>
+    <script src="./js/modalForm.js"></script>
 </body>
 </html>
