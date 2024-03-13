@@ -33,7 +33,6 @@ body{
     width: calc(var(--hw) * 1px ); 
     height: var(--wh);
     z-index: 999;
-    /* border: 1px solid #000; */
     border-radius: 5%;
     transition: all .5s ease-out;
     margin: 70px 20px; 
@@ -45,8 +44,8 @@ body{
 }
 .hexagono img {
     position: absolute;
-    top: 50%; /* Alinea el centro del elemento con el 50% del contenedor principal */
-    left: 50%; /* Alinea el centro del elemento con el 50% del contenedor principal */
+    top: 50%;
+    left: 50%; 
     transform: translate(-50%, -50%);
     z-index: 1;
     width: 118px;
@@ -143,10 +142,9 @@ border-radius: 5%;
 
 .container-drag{
     width: 600px;
-    height: 600px;
     display:flex;
     flex-wrap: wrap;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .container-drop{
@@ -311,7 +309,7 @@ border-radius: 5%;
     color: white;
     font-size: 1.2rem;
     display: flex;
-    margin: 12px 22px;
+    margin: 12px 22px 0px 22px;
     align-items: center;
     justify-content: center;
 }
