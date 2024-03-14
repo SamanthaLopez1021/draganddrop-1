@@ -248,7 +248,7 @@ border-radius: 5%;
     justify-content: center;
 }
 .services{
-    background-image: url(/img/imagenFormularioHoneycomb.png);
+    background-image: url(img/imagenFormularioHoneycomb.png);
     background-size: cover;
     border-radius: 42px;
     width: 496px;
