@@ -9,23 +9,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100..900&family=Nunito+Sans:opsz@6..12&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media-queries.css">
 </head>
 <body>
 
     <div class="container">
-        <div class="title">
-            <h1>Arrastra los servicios que te <br> interesa cotizar</h1>
-        </div>
+        
 
-        <div class="container-drag">
-            
+        <div class="container-drag" id="container-drag" >
+            <div class="title">
+                <h1>Arrastra los servicios que te <br> interesa cotizar</h1>
+            </div>
             <div id="hexaone_a" class="hexagono" draggable="true">
                 <span>Planeación y evaluación de campañas digitales</span>
-                <img class="sevices" src="/img/planeacionEvaluacionCampanasDigitales.svg" alt="">
+                <img class="sevices" src="img/planeacionEvaluacionCampanasDigitales.svg" alt="">
             </div>
             <div  id="hexaTwo_a" class="hexagono" draggable="true">
                 <span>Diseño de contenido grafico</span>
-                <img class="sevices" src="/img/disenoContenidoGrafico.svg">
+                <img class="sevices" src="img/disenoContenidoGrafico.svg">
             </div>
             <div id="hexatree_a" class="hexagono" draggable="true">
                 <span>Renovación del concepto de tu marca</span>
@@ -44,8 +45,8 @@
                 <img class="sevices" src="img/reingenieriaWeb.svg">
             </div>
         </div>
-        <div id="containerDrop_a" class="container-drop" draggable="true">
-            <div id="" class="hexagono-base" draggable="true">
+        <div id="containerDrop_a" class="container-drop" >
+            <div id="" class="hexagono-base" >
                 <span>Así quedaria tu paquete de servicios</span>
             </div>
         </div>
@@ -54,8 +55,6 @@
         </div>
     </div>
 </div>
-
-    
         <!-- modal -->
         <div id="idModalForm" class="centerModal hidden" >
             <div class="panelModal">
@@ -67,7 +66,7 @@
                             </div>
                         </div>
                         <div class="contentModal">
-                            <form action="post">
+                            <form class="form">
                                 <div class="campos">
                                     <input type="text"  name="nombre" placeholder="Nombre">
                                 </div>
@@ -88,7 +87,9 @@
                                     <input type="checkbox" id="checkbox" class="checkbox">
                                     <label class="politicas" for="checkbox">Yo autorizo a Red Design Systems SAS. <a href="#">Leer más</a></label>
                                 </div>
+                                <div class="btn-ok">
                                 <button class="btn-ok-modal" modalClose="idModalUno">Enviar</button>
+                                </div>
                             </form>
                         </div>
                 </div>
@@ -96,5 +97,8 @@
         </div>
     <script src="js/colmena.js"></script>
     <script src="js/modalForm.js"></script>
+    <script src="js/DragDropTouch.js"></script>
+
+
 </body>
 </html>

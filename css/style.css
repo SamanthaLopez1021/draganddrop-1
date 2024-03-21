@@ -13,7 +13,6 @@ body{
 .title {
     width: 100%;
     color: var(--gris);
-    margin-left: 15%;
 }
 .title h1{
     font-size: 2rem;
@@ -142,6 +141,7 @@ border-radius: 5%;
 
 .container-drag{
     width: 600px;
+    height: 600px;
     display:flex;
     flex-wrap: wrap;
     /* align-items: center; */
@@ -151,7 +151,7 @@ border-radius: 5%;
     background-color: var(--gris);
     width: 600px;
     height: 600px;
-    border-radius: 50px ;
+    border-radius: 50px;
 }
 
 
@@ -164,7 +164,6 @@ border-radius: 5%;
     width: 100%;
     display: flex;
     justify-content:center;
-    /* margin-top: 40px; */
     background-color: var(--gris);
     width: 600px;
     margin-left: 600px;
@@ -211,28 +210,11 @@ border-radius: 5%;
     position: relative;
     background-color: var(--gris);
     border-radius: 2.6rem;
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     padding: 16px;
 }
-.closebuttonModal{
-    position: absolute;
-    top: 0.75rem;
-    right: 0.625rem;
-    background-color: transparent;
-    width: 2.6rem;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-}
-.closebuttonModal svg{
-    width: 1.75rem;
-    padding: 5px;
-}
-.closebuttonModal:hover{
-    cursor: pointer;
-}
+
 .titleModal{
     color: var(--rojo);
     font-weight: 800;
@@ -256,6 +238,7 @@ border-radius: 5%;
     box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.477);
     margin: 0;
     padding: 0;
+
 }
 .contentModal{
     text-align: center;
