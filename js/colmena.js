@@ -61,6 +61,8 @@ window.addEventListener("load",(e)=> {
             document.getElementById(idElement).style.top ="";
             document.getElementById(idElement).style.left ="";
             document.getElementById(idElement).style.right ="";
+            document.getElementById(idElement).style.backgroundColor="#42444B"
+            document.getElementById(idElement).style.color="transparent"
 
         });
         
@@ -83,6 +85,7 @@ window.addEventListener("load",(e)=> {
             let zonaAocupar = obtenerZonaLibre(); //una funcion me da la zona a ocupar
             zonas[zonaAocupar].disponible=false;
             zonas[zonaAocupar].elemento=idElement;
+
             
 				//idElementproces === idBox  ? container.appendChild(document.getElementById(idElement)) : alert("no puedes colocar esto aqui")
 				container.appendChild(document.getElementById(idElement));
