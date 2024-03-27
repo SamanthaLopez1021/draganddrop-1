@@ -13,6 +13,8 @@ body{
 .title {
     width: 100%;
     color: var(--gris);
+    margin: 0;
+    padding: 0;
 }
 .title h1{
     font-size: 2rem;
@@ -144,7 +146,7 @@ border-radius: 5%;
     height: 600px;
     display:flex;
     flex-wrap: wrap;
-    /* align-items: center; */
+    position: relative;
 }
 
 .container-drop{
@@ -324,5 +326,4 @@ border-radius: 5%;
 	margin: 80px 16px;
 	display: flex;
 	flex-wrap: wrap;
-	/* justify-content: center; */
 }
